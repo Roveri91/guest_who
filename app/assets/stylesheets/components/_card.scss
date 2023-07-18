@@ -1,18 +1,40 @@
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.card-profession {
+  overflow: hidden;
+  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 250px;
 }
 
-.card-large {
-  height: 50vh;
-  max-height: 400px;
+.card-profession > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-profession h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-profession p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-profession .card-profession-info {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-profession-info {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
 }
