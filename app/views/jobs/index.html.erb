@@ -1,0 +1,11 @@
+<h1>Hire your Guest!</h1>
+
+<% @jobs.each do |job| %>
+<%= job.name %>
+<%= job.price %>
+<%= job.description %>
+<%= job.location %>
+<%= User.find(job.user_id).first_name %>
+<% end %>
+
+<p>For your fantastic wedding!</p>
