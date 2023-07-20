@@ -11,9 +11,12 @@
     <p><%= @job.description %></p>
     <h3>Location:</h3>
     <p><%= @job.location %></p>
-    <%= link_to "Back to the List", jobs_path %>
   </div>
 
   <div id=form class="border p-4"> 
   </div>
+</div>
+
+<div class="nav justify-content-center m-5">
+  <p><%= link_to "Back to the List", jobs_path, class: "text-center" %></p>
 </div>
