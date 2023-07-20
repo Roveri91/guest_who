@@ -1,2 +1,18 @@
-<h1>Jobs#show</h1>
-<p>Find me in app/views/jobs/show.html.erb</p>
+<h1 class="text-center"><%= User.find(@job.user_id).first_name %></h1>
+
+<div class="d-flex flex-row justify-content-around">
+  <div class="rouded border p-4">
+    <h3>Role:</h3>
+    <p><%= @job.name %></p>
+    <h3>Price:</h3>
+    <p><%= @job.price.to_i %> JPY</p>
+    <h3>Description:</h3>
+    <p><%= @job.description %></p>
+    <h3>Location:</h3>
+    <p><%= @job.location %></p>
+    <%= link_to "Back to the List", jobs_path %>
+  </div>
+
+  <div id=form>
+  </div>
+</div>
