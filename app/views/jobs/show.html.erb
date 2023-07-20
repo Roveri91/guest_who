@@ -1,2 +1,18 @@
-<h1>Jobs#show</h1>
-<p>Find me in app/views/jobs/show.html.erb</p>
+<div class="form-background">
+<h1> Complete your wedding party!</h1>
+  <%# <div class="stack"> %>
+  <%# </div> %>
+
+  <h2> <%=@job.name%>  </h2>
+  <i class="fa-solid fa-location-dot"></i> <%= @job.location %>
+  <i class="fa-solid fa-money-bill"></i> ¥<%= @job.price %>/day
+
+  <div class="d-flex justify-content-between">
+    <%= image_tag "bridesmaid.webp", alt: "Bridesmaid", width: 500 %>
+
+    <%= render "shared/form" %>
+  </div>
+  <div class="stack">
+     <%= @job.description %>
+  </div>
+</div>
