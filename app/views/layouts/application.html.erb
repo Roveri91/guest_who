@@ -11,8 +11,18 @@
   </head>
 
   <body>
+  <%# #header%>
+    <%= render "shared/navbar" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    <%# footer  %>
+    <div class="footer">
+    <div class="footer-copyright">
+    <i class="fa-regular fa-copyright"></i> GuestWho. All rights reserved.
+    </div>
+</div>
   </body>
 </html>
+
+<%# rails add notice (for notices) %>
