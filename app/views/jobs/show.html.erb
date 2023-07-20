@@ -1,7 +1,8 @@
-<h1 class="text-center"><%= User.find(@job.user_id).first_name %></h1>
-
+<div>
+  <h1 class="text-center m-3 p-2"><%= User.find(@job.user_id).first_name %></h1>
+</div>
 <div class="d-flex flex-row justify-content-around">
-  <div class="rouded border p-4">
+  <div class="border p-4">
     <h3>Role:</h3>
     <p><%= @job.name %></p>
     <h3>Price:</h3>
@@ -13,6 +14,6 @@
     <%= link_to "Back to the List", jobs_path %>
   </div>
 
-  <div id=form>
+  <div id=form class="border p-4"> 
   </div>
 </div>
