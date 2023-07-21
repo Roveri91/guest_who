@@ -1,18 +1,24 @@
-<div class="form-background">
-<h1> Complete your wedding party!</h1>
-  <%# <div class="stack"> %>
-  <%# </div> %>
+<h2 class="one_job">Complete your wedding party!</h2>
+<div class="d-flex flex-row justify-content-around">
+  <div class="form-background">
+    <h2 > <%=@job.name%>  </h2>
 
-  <h2> <%=@job.name%>  </h2>
-  <i class="fa-solid fa-location-dot"></i> <%= @job.location %>
-  <i class="fa-solid fa-money-bill"></i> ¥<%= @job.price %>/day
+    <div class="icon-container">
+      <h5> <i class="fa-solid fa-location-dot"></i> <%= @job.location %>
+      <i class="fa-solid fa-money-bill" class="one_job"> </i> ¥<%= @job.price.to_i %>/day </h5>
+    </div>
 
-  <div class="d-flex justify-content-between">
-    <%= image_tag "bridesmaid.webp", alt: "Bridesmaid", width: 500 %>
+    <div class="d-flex">
+      <div class="icon-container"><%= image_tag "bridesmaid.webp", alt: "Bridesmaid", width: 500 %> </div>
+      <%= render "shared/form" %>
+    </div>
 
-    <%= render "shared/form" %>
+    <div class="stack">
+     <div class="description"> <%=  @job.description %> </div>
+    </div>
   </div>
-  <div class="stack">
-     <%= @job.description %>
-  </div>
+</div>
+
+<div class="nav justify-content-center m-5">
+  <p><%= link_to "Back to the List", jobs_path, class:"btn btn-return" %></p>
 </div>

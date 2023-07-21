@@ -1,11 +1,19 @@
-<h1>Hire your Guest!</h1>
+<div>
+  <h1 class="text-center">Hire your Guest!</h1>
+  <p class="text-center">For your fantastic wedding!</p>
+</div>
 
-<% @jobs.each do |job| %>
-<%= job.name %>
-<%= job.price %>
-<%= job.description %>
-<%= job.location %>
-<%= User.find(job.user_id).first_name %>
-<% end %>
-
-<p>For your fantastic wedding!</p>
+<div class="container border p-5">
+  <div class="row">
+    <% @jobs.each do |job| %>
+      <div class="col-3 p-5 m-5 border">
+        <h4><%= User.find(job.user_id).first_name %></h4>
+        <p><%= job.name %></p>
+        <p><%= job.price.to_i %> YEN</p>
+        <p><%= job.description %></p>
+        <p><%= job.location %></p>
+        <%= link_to "Book this Guest", job_path(job) %>
+      </div>
+    <% end %>
+  </div>
+</div>
