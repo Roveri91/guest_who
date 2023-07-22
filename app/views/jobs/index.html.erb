@@ -11,11 +11,11 @@
 
           <div class="card-profession col-3">
             <div class="img">
-              <% if false  %> <%#job.image.attached%>
-                <img src="job.image" alt=""> <%# change this to accept cloudinary%>
-              <% else %>
-                <%=image_tag "marriage-silhouette.jpg" %>
-              <% end %>
+              <%# <% if job.image.attached  %>
+                <%= image_tag job.image %>
+              <%# else %>
+                <%#=image_tag "marriage-silhouette.jpg" %>
+              <%# end %>
             </div>
             <div style="margin: 5px;">
               <h2><%= job.name %></h2>
