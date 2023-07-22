@@ -8,26 +8,31 @@
 <div class="container">
   <div class="row">
     <% @jobs.each do |job| %>
-         <div class="card-profession col-3">
-            <div class="img">
+         <div class="card-profession col-3 p-4">
+            <div class="img mx-auto">
               <%# <% if job.image.attached  %>
-                <%= image_tag job.image %>
+                <%= image_tag job.image, style: 'width:210px;height:150px;', class: 'rounded-4' %>
               <%# else %>
                 <%#=image_tag "marriage-silhouette.jpg" %>
               <%# end %>
             </div>
-            <div style="margin: 5px;">
+            <div class="m-2">
               <h2><%= job.name %></h2>
-              <%= job.price %>
+              <p><%= job.price.to_i %> JPY</p>
             </div>
-            <div class="card-profession-info">
-              <%= job.location %>
-              <%= job.description %>
+
+            <div class="m-2">
+              <h5><%= job.location %></h5>
             </div>
-            <div>
+            <div class="m-2">
               <%= User.find(job.user_id).first_name %>
             </div>
-            <%= link_to "Book this Guest", user_signed_in? ? job_path(job) : new_user_session_path %>
+            <div class="card-profession-info border px-4 m-3" style="height: 140px">
+              <p class="text-center"><%= job.description %></p>
+            </div>
+            <div class="d-grid">
+              <button class="btn-hire"><%= link_to "Book this Guest", job_path(job) %></button>
+            </div>
           </div>
     <% end %>
   </div>
