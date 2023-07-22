@@ -41,12 +41,12 @@ locations = ["Tokyo", "Osaka", "Hiroshima", "Kyoto", "Kobe", "Kanazawa", "Sappor
 
 job_details = {
   "Flower girl/boy" => ["flower_girl.jpg", "I'm just a widdle kid wooking to bwighten up any big person's wedding day!"],
-  "Priest" => ["priest_image.jpg", "Fully licensed and well prepared to help you on your wedding day. I can make attempt humour if request or just stick to the script."],
+  "Priest" => ["priest_image.jpg", "Fully licensed and well prepared to assist you on your wedding day. I can make attempts at humour if requested, or just stick to the script."],
   "Best man" => ["best_man.jpg", "Bros tell me all the time I'm an absolute legend at weddings. Not that I ever remember."],
-  "Bridesmaid" => ["bridesmaid.webp", "I'll be there to support you no matter what. I promise I won;t try to upstage you in anyway."],
-  "Drunk Uncle" => ["drunk_uncle.jpg", "Every wedding needs a drunk uncle. I have over 30 years of experience and I'll surely give you a day to remember."],
-  "Grandpa" => ["wedding_grandpa.jpg", "I'll talk to every guest at the wedding and tell them all sorts of stories when you were a kid. Can cry on command"],
-  "Grandma" => ["wedding_grandma.jpg", "I'll tell everyone at the wedding how I can't believe how big you've gotten and how very proud of you I am"],
+  "Bridesmaid" => ["bridesmaid.webp", "I'll be there to support you like sisters no matter what! I also promise I won't try to upstage you in anyway."],
+  "Drunk Uncle" => ["drunk_uncle.jpg", "Every uncle needs a drunk wedding. I have over 30 years of experience and I'll surely give you a day to remember."],
+  "Grandpa" => ["wedding_grandpa.jpg", "I'll talk to every guest at the wedding and tell them all sorts of stories about when you were a kid. Can cry on command."],
+  "Grandma" => ["wedding_grandma.jpg", "I'll tell everyone at the wedding how I can't believe how big you've gotten and how very proud of you I am."],
   "Charioteer" => ["charioteer.jpg", "I'll take you to wherever, or from wherever you want. Horse incldued."],
   "General guest" => ["wedding_guest.jpg", "I'll tell everyone how radiant you look, how amazing the day is for a wedding, laugh at your speech. Whatever you need." ]
 }
