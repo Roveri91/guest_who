@@ -1,4 +1,5 @@
 <div>
+
 <center><h1 style="font-family: Allan; font-style: italic">Hire your Guest!</h1></center>
 </div>
 <div>
@@ -27,6 +28,7 @@
             <div>
               <%= User.find(job.user_id).first_name %>
             </div>
+            <%= link_to "Book this Guest", job_path(job) %>
           </div>
 
     <% end %>
