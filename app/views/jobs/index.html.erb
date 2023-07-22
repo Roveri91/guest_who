@@ -21,13 +21,13 @@
               <%= job.price %>
             </div>
             <div class="card-profession-info">
-              <%= job.description %>
               <%= job.location %>
+              <%= job.description %>
             </div>
             <div>
               <%= User.find(job.user_id).first_name %>
             </div>
-            <%= link_to "Book this Guest", job_path(job) %>
+            <%= link_to "Book this Guest", user_signed_in? ? job_path(job) : new_user_session_path %>
           </div>
     <% end %>
   </div>
