@@ -12,7 +12,9 @@
 
   <body>
   <%# #header%>
-    <%= render "shared/navbar" %>
+    <div id="myHeader">
+      <%= render "shared/navbar" %>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
