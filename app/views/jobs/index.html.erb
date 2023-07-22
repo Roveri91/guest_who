@@ -1,19 +1,39 @@
 <div>
-  <h1 class="text-center">Hire your Guest!</h1>
-  <p class="text-center">For your fantastic wedding!</p>
-</div>
 
-<div class="container border p-5">
+<center><h1 style="font-family: Allan; font-style: italic">Hire your Guest!</h1></center>
+</div>
+<div>
+<center><p>For your fantastic wedding!</p></center></div>
+
+<div class="container">
   <div class="row">
     <% @jobs.each do |job| %>
-      <div class="col-3 p-5 m-5 border">
-        <h4><%= User.find(job.user_id).first_name %></h4>
-        <p><%= job.name %></p>
-        <p><%= job.price.to_i %> YEN</p>
-        <p><%= job.description %></p>
-        <p><%= job.location %></p>
-        <%= link_to "Book this Guest", job_path(job) %>
-      </div>
+
+          <div class="card-profession col-3">
+            <div class="img">
+              <% if false  %> <%#job.image.attached%>
+                <img src="job.image" alt=""> <%# change this to accept cloudinary%>
+              <% else %>
+                <%=image_tag "marriage-silhouette.jpg" %>
+              <% end %>
+            </div>
+            <div style="margin: 5px;">
+              <h2><%= job.name %></h2>
+              <%= job.price %>
+            </div>
+            <div class="card-profession-info">
+              <%= job.description %>
+              <%= job.location %>
+            </div>
+            <div>
+              <%= User.find(job.user_id).first_name %>
+            </div>
+            <%= link_to "Book this Guest", job_path(job) %>
+          </div>
+
     <% end %>
   </div>
 </div>
+
+<%# <%= cl_image_tag @item.photo.key, width: 380, height: 380, crop: :fill, class: 'img-fluid m-2' %>
+<%# <%= image_tag movie.poster_url , alt: "test", class: "img-fluid m-2"%>
