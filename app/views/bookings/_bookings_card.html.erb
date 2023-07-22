@@ -1,13 +1,14 @@
-<div class="card-profession col-3">
-  <div class="row">
-  <div class = "my-3 p-2">
+<div class="col-lg-3">
+<div class="card-profession">
+  <div class = "m-3 p-2">
     <h2><%= booking.job.name %></h2>
-    <%= booking.job.price %>
+    <%= booking.job.price %> JPY
   </div>
-  <div class="card-profession-info">
+  <div class="card-profession-info m-3 p-2">
     <%= booking.date %>
   </div>
-  <div>
+  <div class="card-profession-info m-3 p-2">
     <%= booking.job.user.first_name %>
+  </div>
   </div>
 </div>
