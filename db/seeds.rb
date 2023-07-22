@@ -57,26 +57,6 @@ puts "Creating 20 new Jobs and bookings"
   booking = Booking.create!(date: Date.today, job_id: job.id, user_id: users.sample.id, status: [0..2].sample)
   job.image = job_details[job.name][0]
   job.description = job_details[job.name][1]
-
-  # if (job.name == "Flower girl/boy")
-  #   job.image = "flower_girl.jpg"
-  # elsif job.name == "Priest"
-  #   job.image = "priest_image.jpg"
-  # elsif job.name == "Best man"
-  #   job.image = "best_man.jpg"
-  # elsif job.name == "Bridesmaid"
-  #   job.image = "bridesmaid.webp"
-  # elsif job.name == "Drunk Uncle"
-  #   job.image = "drunk_uncle.jpg"
-  # elsif job.name == "Grandpa"
-  #   job.image = "wedding_grandpa.jpg"
-  # elsif job.name == "Grandma"
-  #   job.image = "wedding_grandma.jpg"
-  # elsif job.name == "Charioteer"
-  #   job.image = "charioteer.jpg"
-  # else
-  #   job.image = "wedding_guest.jpg"
-  # end
   job.save!
   puts "create #{job.name} adv"
   puts "create #{booking.id}"
