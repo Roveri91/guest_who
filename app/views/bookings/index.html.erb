@@ -1,9 +1,14 @@
-<h1>See your Bookings</h1>
+<div class = "container">
+<h2 class="one_job">See your Bookings</h2>
+  <div class="d-flex flex-row justify-content-around">
 
-<% @bookings.each do |booking| %>
-  <li>
-  <%= booking.date %>
-  <%= booking.job.name %>
-  <%= booking.job.price %>
-  </li>
-<% end %>
+    <% @bookings.each do |booking| %>
+     <%= render "bookings_card", booking: booking %>
+    <% end %>
+  </div>
+
+</div>
+
+<div class="nav justify-content-center m-5">
+  <p><%= link_to "Back to Professions", jobs_path, class:"btn btn-return" %></p>
+</div>

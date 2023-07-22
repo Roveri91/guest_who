@@ -8,8 +8,7 @@
 <div class="container">
   <div class="row">
     <% @jobs.each do |job| %>
-
-          <div class="card-profession col-3">
+         <div class="card-profession col-3">
             <div class="img">
               <%# <% if job.image.attached  %>
                 <%= image_tag job.image %>
@@ -30,6 +29,19 @@
             </div>
             <%= link_to "Book this Guest", job_path(job) %>
           </div>
+          <div style="margin: 5px;">
+            <h2><%= job.name %></h2>
+            <%= job.price %>
+          </div>
+          <div class="card-profession-info">
+            <%= job.description %>
+            <%= job.location %>
+          </div>
+          <div>
+            <%= User.find(job.user_id).first_name %>
+          </div>
+          <%= link_to "Book this Guest", job_path(job) %>
+        </div>
 
     <% end %>
   </div>
