@@ -2,13 +2,21 @@
 <div class="card-profession">
   <div class = "m-3 p-2">
     <h2><%= booking.job.name %></h2>
-    <%= booking.job.price.to_i %> JPY
+    <%= booking.job.location%>
+    <%= image_tag booking.job.image %>
+
   </div>
   <div class="card-profession-info m-3 p-2">
-    <%= booking.date %>
+    Booked for: <%= booking.date %>
   </div>
   <div class="card-profession-info m-3 p-2">
-    <%= booking.job.user.first_name %>
+    Description: <%= booking.job.description %>
+  </div>
+  <div class="card-profession-info m-3 p-2">
+    Name: <%= booking.job.user.first_name %>
+    </div>
+  <div class="card-profession-info m-3 p-2">
+  Total: ¥<%= booking.job.price.to_i %>
   </div>
   </div>
 </div>
