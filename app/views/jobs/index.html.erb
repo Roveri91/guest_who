@@ -9,7 +9,7 @@
   <div class="row">
     <% @jobs.each do |job| %>
          <div class="card-profession col-3 p-4">
-            <div class="img centered">
+            <div class="img mx-auto">
               <%# <% if job.image.attached  %>
                 <%= image_tag job.image, style: 'width:210px;height:150px;', class: 'rounded-4' %>
               <%# else %>
@@ -26,10 +26,12 @@
             <div class="m-2">
               <%= User.find(job.user_id).first_name %>
             </div>
-            <div class="card-profession-info border p-4">
-              <p><%= job.description %></p>
+            <div class="card-profession-info border px-4 m-3" style="height: 140px">
+              <p class="text-center"><%= job.description %></p>
             </div>
-            <%= link_to "Book this Guest", job_path(job) %>
+            <div class="d-grid">
+              <button class="btn-hire"><%= link_to "Book this Guest", job_path(job) %></button>
+            </div>
           </div>
     <% end %>
   </div>
