@@ -1,7 +1,11 @@
 <div class="header">
   <a href="/" class="title">Guest Who</a>
   <div class="header-right">
-    <a href="#">Bookings</a>
-    <a href="jobs#index">Professions</a>
+    <% if user_signed_in? %>
+      <span><%= link_to "Your Bookings", bookings_path %></span>
+    <% else %>
+      <span><%= link_to "Sign in", new_user_session_path %></span>
+    <% end %>
+    <span><%= link_to "Professions", jobs_path %></span>
   </div>
 </div>
