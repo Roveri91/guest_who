@@ -13,6 +13,7 @@ class JobsController < ApplicationController
   end
 
   def create
+    
   end
 
   private

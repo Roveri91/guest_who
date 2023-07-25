@@ -27,10 +27,10 @@
             <div class="m-2">
               <%= User.find(job.user_id).first_name %>
             </div>
-            <div class="card-profession-info border px-4 m-3" style="height: 140px">
+            <div class="card-profession-info border rounded-4 px-4 m-3" style="height: 140px">
               <p class="text-center my-auto"><%= job.description %></p>
             </div>
-            <div class="d-grid">
+            <div class="d-grid m-2">
               <button class="btn-hire"><%= link_to "Book this Guest", job_path(job) %></button>
             </div>
           </div>
