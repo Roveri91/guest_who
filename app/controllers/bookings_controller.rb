@@ -17,10 +17,19 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to bookings_path
+    else
+      redirect_to jobs_path
+    end
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:date, :status)
   end
 
   def set_job

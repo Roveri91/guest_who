@@ -4,12 +4,38 @@
   <div class="row">
 
     <% @bookings.each do |booking| %>
-     <%= render "bookings_card", booking: booking %>
+     <!-- <%= render "bookings_card", booking: booking %> -->
+     <div class="card-profession col-3 p-4">
+            <div class="img mx-auto">
+              <%# <% if job.image.attached  %>
+                <%= image_tag booking.job.image, style: 'width:210px;height:150px;', class: 'rounded-4' %>
+              <%# else %>
+                <%#=image_tag "marriage-silhouette.jpg" %>
+              <%# end %>
+            </div>
+            <div class="m-2">
+              <h2><%= booking.job.name %></h2>
+              <h2>Status: <%= booking.status %></h2>
+            </div>
+            <div class="card-profession-info m-3 p-2">
+              <h5>Booked for: <%= booking.date %></h5>
+            </div>
+            <div class="m-2">
+              <h5><%= booking.job.location %></h5>
+            </div>
+            <div class="m-2">
+              <h5> Name: <%= booking.job.user.first_name %></h5>
+            </div>
+            <div class="card-profession-info border px-4 m-3" style="height: 140px">
+              <p class="text-center my-auto"><%=  booking.job.description %></p>
+            </div>
+
+          </div>
     <% end %>
   </div>
 
 </div>
 
 <div class="nav justify-content-center m-5">
-  <p><%= link_to "Back to Professions", jobs_path, class:"btn btn-return" %></p>
+  <button class="btn-hire"><%= link_to "Back to Professions", jobs_path %></button>
 </div>

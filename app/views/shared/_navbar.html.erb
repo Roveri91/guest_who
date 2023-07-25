@@ -7,8 +7,17 @@
       <span><%= link_to "Sign in", new_user_session_path %></span>
     <% end %> -->
 
+    <% if user_signed_in? %>
+      <span><%= link_to "You Jobs", provider_jobs_path %></span>
+    <% end %>
+
     <span><%= link_to user_signed_in? ? "Your Bookings" : "Sign In", user_signed_in? ? bookings_path : new_user_session_path %></span>
 
     <span><%= link_to "Professions", jobs_path %></span>
+
+    <% if user_signed_in? %>
+      <span><%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-danger" %></span>
+    <% end %>
+
   </div>
 </div>
