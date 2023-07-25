@@ -54,7 +54,7 @@ job_details = {
 puts "Creating 20 new Jobs and bookings"
 20.times do
   job = Job.create!(name: names.sample, price: rand(5...10)*1000, location: locations.sample, user: users.sample)
-  booking = Booking.create!(date: Date.today, job_id: job.id, user_id: users.sample.id, status: [0..2].sample)
+  booking = Booking.create!(date: Date.today, job_id: job.id, user_id: users.sample.id)
   job.image = job_details[job.name][0]
   job.description = job_details[job.name][1]
   job.save!
