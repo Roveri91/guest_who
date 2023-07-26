@@ -6,7 +6,7 @@
           class: "form-control",
           placeholder: "Bridesmaid"
         %>
-      <%= submit_tag "Search", name: "", class: "btn btn-submit" %>
+      <%= submit_tag "Search", name: "", class: "btn-hire" %>
     <% end %>
     </div>
   </div>
@@ -44,7 +44,7 @@
               <p class="text-center my-auto"><%= job.description %></p>
             </div>
             <div class="d-grid m-2">
-              <button class="btn-hire"><%= link_to "Book this Guest", job_path(job) %></button>
+              <button class="btn-hire"><%= link_to "Make a Reservation", job_path(job) %></button>
             </div>
           </div>
     <% end %>
