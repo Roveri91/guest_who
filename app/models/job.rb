@@ -5,9 +5,9 @@ class Job < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search_by_name_and_location_and_description_and_price,
     against: [ :name, :location, :description, :price ],
-    # associated_against: {
-    #   user_id: [:first_name]
-    # },
+    associated_against: {
+      user: [:first_name]
+    },
     using: {
       tsearch: { prefix: true } # tsearch is full text search
   }
