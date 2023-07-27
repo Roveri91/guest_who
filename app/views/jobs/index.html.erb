@@ -23,7 +23,7 @@
     <% @jobs.each do |job| %>
          <div class="card-profession col-3 p-4">
             <div class="img mx-auto">
-              <%# <% if job.image.attached  %>
+              <%# <% if job.image.attached?  %>
                 <%= image_tag job.image, style: 'width:210px;height:150px;', class: 'rounded-4' %>
               <%# else %>
                 <%#=image_tag "marriage-silhouette.jpg" %>

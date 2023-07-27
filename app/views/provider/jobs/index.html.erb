@@ -24,12 +24,12 @@
             <div class="m-2">
               <h5><%= job.location %></h5>
             </div>
-            <div class="m-2">
-              <%= User.find(job.user_id).first_name %>
-            </div>
             <div class="card-profession-info border rounded-4 px-4 m-3" style="height: 170px">
               <p class="text-center my-auto"><%= job.description %></p>
             </div>
+            <%# <div class="d-grid m-2">
+              <button class="btn-hire"><%= link_to "Make a Reservation", job_path(job) %></button>
+            <%# </div> %>
           </div>
     <% end %>
   </div>
