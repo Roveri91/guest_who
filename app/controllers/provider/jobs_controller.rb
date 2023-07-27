@@ -18,6 +18,15 @@ class Provider::JobsController < ApplicationController
     # redirect_to provider_jobs
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to bookings_path
+    else
+      redirect_to jobs_path
+    end
+  end
+
   private
 
   def job_params

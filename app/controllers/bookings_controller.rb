@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_job, only: [:create]
+  before_action :set_job, only: [:new, :create, :update]
 
   def index
     @bookings = current_user.bookings
@@ -15,15 +15,6 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.save
     redirect_to bookings_path
-  end
-
-  def update
-    @booking = Booking.find(params[:id])
-    if @booking.update(booking_params)
-      redirect_to bookings_path
-    else
-      redirect_to jobs_path
-    end
   end
 
   private

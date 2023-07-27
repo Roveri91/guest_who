@@ -2,3 +2,8 @@
 
 
 <button class="btn-hire"><%= link_to "Become a Provider", new_provider_job_path %></button>
+
+<% current_user.bookings.each do |booking| %>
+  <%= booking.job.name%>
+  <%= booking.date%>
+<% end %>
