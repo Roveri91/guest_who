@@ -1,4 +1,37 @@
 <h1 class="text-center">Your Jobs</h1>
 
+<% if @jobs.empty? %>
+  <div class="text-center" style="margin: 40px">
+    <button class="btn-hire text-center"><%= link_to "Become a Provider", new_provider_job_path %></button>
+  </div>
+<% else %>
+  <div class="container">
+  <div class="row">
+    <% @jobs.each do |job| %>
+         <div class="card-profession col-3 p-4">
+            <div class="img mx-auto">
+              <%# if job.image.attached  %>
+                <%= image_tag job.image, style: 'width:210px;height:150px;', class: 'rounded-4' %>
+              <%# else %>
+                <%#=image_tag "marriage-silhouette.jpg" %>
+              <%# end %>
+            </div>
+            <div class="m-2">
+              <h2><%= job.name %></h2>
+              <p><%= job.price.to_i %> JPY</p>
+            </div>
 
-<button class="btn-hire"><%= link_to "Become a Provider", new_provider_job_path %></button>
+            <div class="m-2">
+              <h5><%= job.location %></h5>
+            </div>
+            <div class="m-2">
+              <%= User.find(job.user_id).first_name %>
+            </div>
+            <div class="card-profession-info border rounded-4 px-4 m-3" style="height: 170px">
+              <p class="text-center my-auto"><%= job.description %></p>
+            </div>
+          </div>
+    <% end %>
+  </div>
+</div>
+<% end %>

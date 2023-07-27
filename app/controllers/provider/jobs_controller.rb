@@ -1,7 +1,7 @@
 class Provider::JobsController < ApplicationController
 
   def index
-    # @jobs = Job.where(user = current_user)
+    @jobs = current_user.jobs
   end
 
   def new
