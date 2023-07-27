@@ -65,15 +65,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_25_120825) do
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
-  create_table "maps", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float "latitude"
-    t.float "longitude"
-    t.string "name"
-    t.string "address"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

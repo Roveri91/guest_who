@@ -9,15 +9,15 @@ class Provider::JobsController < ApplicationController
       @job = Job.new
     end
   
-    def create
-      @job = Job.new(job_params)
-      @job.user = current_user
-      if @job.save!
-        redirect_to provider_jobs_path
-      else
-        render :new, status: :unprocessable_entity
-      end
-    end
+    # def create
+    #   @job = Job.new(job_params)
+    #   @job.user = current_user
+    #   if @job.save!
+    #     redirect_to provider_jobs_path
+    #   else
+    #     render :new, status: :unprocessable_entity
+    #   end
+    # end
   
     private
   
