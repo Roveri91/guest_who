@@ -1,10 +1,9 @@
 class JobsController < ApplicationController
   def index
     @jobs = Job.all
-    if params[:query].present?
-      sql_subquery = "name ILIKE :query OR location ILIKE :query OR description ILIKE :query"
-      @jobs = @jobs.where(sql_subquery, query: "%#{params[:query]}%") # I stands for case insensitive
-    end
+      if params[:query].present?
+        @jobs = Job.search_by_name_and_location_and_description_and_price(params[:query])
+      end
   end
 
   def show
