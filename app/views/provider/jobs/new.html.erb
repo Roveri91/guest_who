@@ -1,0 +1,17 @@
+<h1 class="text-center">Become a Provider</h1>
+
+<div class="d-flex flex-row justify-content-center">
+  <div class="p-3 ">
+    <%= simple_form_for [@job] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <%= f.input :location %>
+      <%= f.input :photo, as: :file, input_html: { multiple: false } %>
+      <div class="d-flex justify-content-evenly my-5">
+        <%= f.button :submit, class:"btn-hire" %>
+        <button class="btn-hire"><%= link_to "Back", provider_jobs_path%></button>
+      </div>
+    <% end %>
+  </div>
+</div>

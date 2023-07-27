@@ -5,9 +5,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :jobs, only: [:index, :show, :new, :create] do
+  resources :jobs, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
   end
 
-  resources :bookings, only: [:index, :update]
+  namespace :provider do
+    resources :jobs, only: [:index, :new, :create]
+    # equivalent to => get '/<namespace>/bookings', to: '<namespace>/bookings#index'
+  end
+
+  resources :bookings, only: [:index]
 end
