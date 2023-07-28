@@ -2,7 +2,7 @@
 
 <% if @jobs.empty? %>
   <div class="text-center" style="margin: 40px">
-    <button class="btn-hire text-center"><%= link_to "Become a Provider", new_provider_job_path %></button>
+    <%= link_to "Become a Provider", new_provider_job_path, class: "btn-hire text-center" %>
   </div>
 <% else %>
   <div class="container">
@@ -11,7 +11,7 @@
          <div class="card-profession col-3 p-4">
             <div class="img mx-auto">
               <%# if job.image.attached  %>
-                <%= image_tag job.image, style: 'width:210px;height:150px;', class: 'rounded-4' %>
+                <%= cl_image_tag(job.photo.key, style: 'width:210px;height:150px;', class: 'rounded-4') %>
               <%# else %>
                 <%#=image_tag "marriage-silhouette.jpg" %>
               <%# end %>
@@ -28,7 +28,7 @@
               <p class="text-center my-auto"><%= job.description %></p>
             </div>
             <%# <div class="d-grid m-2">
-              <button class="btn-hire"><%= link_to "Make a Reservation", job_path(job) %></button>
+              <%= link_to "Make a Reservation", job_path(job), class: "btn-hire" %>
             <%# </div> %>
           </div>
     <% end %>
