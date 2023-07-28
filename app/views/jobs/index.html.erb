@@ -44,7 +44,7 @@
               <p class="text-center my-auto"><%= job.description %></p>
             </div>
             <div class="d-grid m-2">
-              <button class="btn-hire"><%= link_to "Make a Reservation", job_path(job) %></button>
+              <%= link_to "Make a Reservation", job_path(job), class: "btn-hire text-center" %>
             </div>
           </div>
     <% end %>
