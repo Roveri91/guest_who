@@ -1,15 +1,15 @@
 <% @bookings.each do |booking| %>
   <%= booking.job.name %>
-  <%= booking.date%>
+  <%= booking.date %>
 
   <div class="d-flex">
-    <%= simple_form_for ([@user, booking], url: provider_booking_path(booking)) do |f| %>
-      <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+    <%= simple_form_for([@user, booking], url: provider_booking_path(booking)) do |f| %>
+      <%= f.input :status, as: :hidden, input_html: { value: 'accepted' } %>
       <%= f.submit 'Accept', class: 'btn btn-hire' %>
     <% end %>
 
-    <%= simple_form_for ([@user, booking], url: provider_booking_path(booking)) do |f| %>
-      <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+    <%= simple_form_for([@user, booking], url: provider_booking_path(booking)) do |f| %>
+      <%= f.input :status, as: :hidden, input_html: { value: 'rejected' } %>
       <%= f.submit 'Reject', class: 'btn btn-hire' %>
     <% end %>
   </div>
