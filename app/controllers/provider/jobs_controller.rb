@@ -1,9 +1,20 @@
 class Provider::JobsController < ApplicationController
-    # layout "job"
-  
-    def index
-      
+
+  def index
+    @jobs = current_user.jobs
+  end
+
+  def new
+    @job = Job.new
+  end
+
+  def create
+    @job = Job.new(job_params)
+    @job.user = current_user
+    if @job.save!
+      puts @job.error.messages
     end
+  end
   
     def new
       @job = Job.new
@@ -25,5 +36,5 @@ class Provider::JobsController < ApplicationController
       params.require(:job).permit(:name, :price, :description, :location, :user_id, :photo)
     end
   
-  end
+ end
   
