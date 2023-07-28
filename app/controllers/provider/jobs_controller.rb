@@ -1,23 +1,13 @@
 class Provider::JobsController < ApplicationController
 
   def index
-    # @jobs = Job.where(user = current_user)
+    @jobs = current_user.jobs
   end
 
   def new
     @job = Job.new
   end
-
-  def create
-    @job = Job.new(job_params)
-    @job.user = current_user
-    if @job.save!
-      puts @job.error.messages
-    end
-    # @job.save!
-    # redirect_to provider_jobs
-  end
-
+  
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)

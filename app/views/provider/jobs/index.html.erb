@@ -1,9 +1,37 @@
 <h1 class="text-center">Your Jobs</h1>
 
-
-<button class="btn-hire"><%= link_to "Become a Provider", new_provider_job_path %></button>
-
-<% current_user.bookings.each do |booking| %>
-  <%= booking.job.name%>
-  <%= booking.date%>
+<% if @jobs.empty? %>
+  <div class="text-center" style="margin: 40px">
+    <%= link_to "Become a Provider", new_provider_job_path, class: "btn-hire text-center" %>
+  </div>
+<% else %>
+  <div class="container">
+  <div class="row">
+    <% @jobs.each do |job| %>
+         <div class="card-profession col-3 p-4">
+            <div class="img mx-auto">
+              <%# if job.image.attached  %>
+                <%= cl_image_tag(job.photo.key, style: 'width:210px;height:150px;', class: 'rounded-4') %>
+              <%# else %>
+                <%#=image_tag "marriage-silhouette.jpg" %>
+              <%# end %>
+            </div>
+            <div class="m-2">
+              <h2><%= job.name %></h2>
+              <p><%= job.price.to_i %> JPY</p>
+            </div>
+           
+            <div class="m-2">
+              <h5><%= job.location %></h5>
+            </div>
+            <div class="card-profession-info border rounded-4 px-4 m-3" style="height: 170px">
+              <p class="text-center my-auto"><%= job.description %></p>
+            </div>
+            <%# <div class="d-grid m-2">
+              <%= link_to "Make a Reservation", job_path(job), class: "btn-hire" %>
+            <%# </div> %>
+          </div>
+    <% end %>
+  </div>
+</div>
 <% end %>
