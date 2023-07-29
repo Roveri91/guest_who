@@ -1,25 +1,25 @@
-<h2 class="one_job text-center">Complete your wedding party!</h2>
+<h1 style="font-family: Allan; font-style: italic" class="one_job text-center">Hey <%= current_user.first_name %>, Complete your wedding party!</h1>
 <div class="d-flex flex-row justify-content-center">
-  <div class="form-background col-9 border p-5 ">
+  <div class="form-background col-8 border border-5 rounded-4 p-5 ">
     <div class="d-flex">
-      <div class="col-6 border">
+      <div class="col-8">
         <div class="icon-container">
           <h2 > <%=@job.name%>  </h2>
           <h5> <i class="fa-solid fa-location-dot"></i> <%= @job.location %>
           <i class="fa-solid fa-money-bill" class="one_job"> </i> ¥<%= @job.price.to_i %>/day </h5>
         </div>
-        <%= cl_image_tag(@job.photo.key, alt: "Bridesmaid", width: 450, class: "rounded-4")  %> 
+        <%= cl_image_tag(@job.photo.key, alt: "Bridesmaid", width: 500, class: "rounded-4")  %> 
       </div>
-      <div class="col-6 border container">
-        <div class="description border row"> 
-          <h2>Description:</h2>
-          <p><%=@job.description %></p>
+      <div class="d-flex col-4 flex-column justify-content-between">
+        <div class="mt-5">
+            <h2>Description:</h2>
+            <p><%=@job.description %></p>
         </div>
-        <div class="border row p-5">
-          <% if @job.user != current_user %>
-            <%= render "shared/form" %>
-          <% end %>
-        </div>
+        <% if @job.user != current_user %>
+          <div class="border border-2 p-4 rounded-4">
+              <%= render "shared/form" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
