@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   end
 
   namespace :provider do
-    resources :jobs, only: [:index, :new, :create]
-    resources :bookings, only: [:index,:update]
+    resources :jobs, only: [:index, :new, :create, :destroy]
+    resources :bookings, only: [:index,:update] #do :patch ???
     # equivalent to => get '/<namespace>/bookings', to: '<namespace>/bookings#index'
   end
 

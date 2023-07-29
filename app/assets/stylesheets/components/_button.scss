@@ -29,3 +29,12 @@ button:hover > a {
   color: black !important;
 }
 
+#delete-btn:hover {
+  color: black;
+  border: outset 2px rgb(220,20,60);
+  background-color:rgb(220,20,60);
+}
+
+#delete-btn {
+  color: pink;
+}
