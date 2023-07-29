@@ -23,11 +23,7 @@
     <% @jobs.each do |job| %>
          <div class="card-profession col-3 p-4">
             <div class="img mx-auto">
-              <%# <% if job.image.attached  %>
-                <%= cl_image_tag(job.photo.key, style: 'width:210px;height:150px;', class: 'rounded-4') %>
-              <%# else %>
-                <%#=image_tag "marriage-silhouette.jpg" %>
-              <%# end %>
+              <%= cl_image_tag(job.photo.key, style: 'width:210px;height:150px;', class: 'rounded-4') %>
             </div>
             <div class="m-2">
               <h2><%= job.name %></h2>
@@ -44,7 +40,7 @@
               <p class="text-center my-auto"><%= job.description %></p>
             </div>
             <div class="d-grid m-2">
-              <%= link_to "Make a Reservation", job_path(job), class: "btn-hire text-center" %>
+              <%= link_to "Make a Reservation", user_signed_in? ? job_path(job) : new_user_session_path, class: "btn-hire text-center" %>
             </div>
           </div>
     <% end %>

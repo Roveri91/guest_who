@@ -10,7 +10,9 @@
 
     <div class="d-flex">
       <div class="icon-container"><%= cl_image_tag(@job.photo.key, alt: "Bridesmaid", width: 500)  %> </div>
-      <%= render "shared/form" %>
+      <% if @job.user != current_user %>
+        <%= render "shared/form" %>
+      <% end %>
     </div>
 
     <div class="stack">
