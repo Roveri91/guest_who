@@ -1,27 +1,34 @@
-<div class="bookings">
-  <% @bookings.each do |booking| %>
-  <div class="booking">
-    <div class="booking-info-details">
-      <%= booking.job.name %>
-      <%= booking.date %>
+<div class="container px-5">
+  <div class="bookings">
+    <% @bookings.each do |booking| %>
+    <div class="booking">
+      <div class='booking-left'>
+        <%#= cl_image_tag booking.user.photo %>
+        <div class="booking-info">
+          <div class="booking-info-title">
+            <%= booking.job.name %>
+            <%= booking.date %>
+        </div>
+      </div>
     </div>
-    <%# <%= cl_image_tag booking.user.photo %>
-    <div class="booking-actions">
-      <% if booking.pending? %>
-      <%= simple_form_for([@user, booking], url: provider_booking_path(booking)) do |f| %>
-        <%= f.input :status, as: :hidden, input_html: { value: 'accepted' } %>
-        <%= f.submit 'Accept', class: 'btn btn-hire' %>
+      <div class="booking-actions">
+        <% if booking.pending? %>
+        <%= simple_form_for([@user, booking], url: provider_booking_path(booking)) do |f| %>
+          <%= f.input :status, as: :hidden, input_html: { value: 'accepted' } %>
+          <%= f.submit "Accept", class: "btn btn-hire" %>
+          <%# <%= link_to "Accept", index_provider_booking_path %>
       <% end %>
+        <%= simple_form_for([@user, booking], url: provider_booking_path(booking)) do |f| %>
+          <%= f.input :status, as: :hidden, input_html: { value: 'rejected' } %>
+          <%= f.submit 'Decline', class: 'btn btn-hire' %>
+        <% end %>
 
-    <%= simple_form_for([@user, booking], url: provider_booking_path(booking)) do |f| %>
-      <%= f.input :status, as: :hidden, input_html: { value: 'rejected' } %>
-      <%= f.submit 'Decline', class: 'btn btn-hire' %>
-    <% end %>
-    <% else %>
-      <p class='booking-tag'><%= booking.status %></p>
-     <% end %>
-     </div>
+        <% else %>
+          <p class='booking-tag'><%= booking.status %></p>
+        <% end %>
+      </div>
+      </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
