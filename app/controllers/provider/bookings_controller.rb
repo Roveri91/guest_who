@@ -11,7 +11,7 @@ class Provider::BookingsController < ApplicationController
       redirect_to provider_bookings_path
     elsif params[:booking][:status] == 'rejected' && @booking.update(status: 2)
       # @booking.update(status: 2)
-      redirect_to provider_jobs_path
+      redirect_to provider_bookings_path
     end
   end
 

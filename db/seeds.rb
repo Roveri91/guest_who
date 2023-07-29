@@ -55,7 +55,7 @@ job_details = {
 
 puts "Creating 20 new Jobs and bookings"
 20.times do
-  job = Job.create!(name: names.sample, price: rand(5...10)*1000, location: locations.sample, user: users.sample,  description: "This is a default description!")
+  job = Job.create!(name: names.sample, price: rand(5...10)*1000, location: locations.sample, user: users.sample, description: "This is a default description!")
   booking = Booking.create!(date: Date.today, job_id: job.id, user_id: users.sample.id)
   file = URI.open(job_details[job.name][0])
   # job.image = job_details[job.name][0]
