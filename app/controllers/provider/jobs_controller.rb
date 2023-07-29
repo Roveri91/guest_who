@@ -17,6 +17,12 @@ class Provider::JobsController < ApplicationController
     end
   end
 
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to provider_jobs_path, status: :see_other
+  end
+
   private
 
   def job_params
