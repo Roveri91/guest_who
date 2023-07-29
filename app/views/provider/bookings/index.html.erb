@@ -1,14 +1,16 @@
 <div class="container px-5">
+  <h1 class="text-center">Your Orders</h1>
   <div class="bookings">
     <% @bookings.each do |booking| %>
     <div class="booking">
       <div class='booking-left'>
+        <%= cl_image_tag(booking.job.photo.key, style: 'width:170px;height:121px;', class: 'rounded-4') %>
         <%#= cl_image_tag booking.user.photo %>
         <div class="booking-info">
           <div class="booking-info-title">
             <%= booking.job.name %>
-            <%= booking.date %>
           </div>
+            <%= booking.date.strftime('%B %d, %Y')%>
         </div>
       </div>
       <div class="booking-actions">
