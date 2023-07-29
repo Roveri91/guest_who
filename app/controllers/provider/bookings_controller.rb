@@ -7,11 +7,11 @@ class Provider::BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    if @booking.update(status: 'accepted')
-      redirect_to bookings_path
-    else
-      redirect_to jobs_path
-      # status: 'rejected'
+    if params[:booking][:status] == 'accepted' && @booking.update(status: 1)
+      redirect_to provider_bookings_path
+    elsif params[:booking][:status] == 'rejected' && @booking.update(status: 2)
+      # @booking.update(status: 2)
+      redirect_to provider_jobs_path
     end
   end
 
