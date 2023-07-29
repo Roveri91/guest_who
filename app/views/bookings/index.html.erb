@@ -1,7 +1,7 @@
 <div class = "container">
 <h1 class="one_job text-center", style="font-family: Allan; font-style: italic">See and Manage your Bookings</h1>
   <div class="d-flex flex-row justify-content-around">
-  <div class="row">
+  <div class="d-flex flex-wrap justify-content-center">
 
     <% @bookings.each do |booking| %>
      <!-- <%= render "bookings_card", booking: booking %> -->
@@ -26,7 +26,7 @@
             <div class="m-2">
               <h5> Name: <%= booking.job.user.first_name %></h5>
             </div>
-            <div class="card-profession-info border px-4 m-3" style="height: 140px">
+            <div class="card-profession-info border px-4 m-3" style="height: 200px">
               <p class="text-center my-auto"><%=  booking.job.description %></p>
             </div>
 

@@ -19,9 +19,9 @@
 <div>
 
 <div class="container">
-  <div class="row justify-content-between">
+  <div class="d-flex flex-wrap justify-content-center">
     <% @jobs.each do |job| %>
-         <div class="card-profession col-3 p-4">
+         <div class="card-profession col-4 p-4">
             <div class="img mx-auto">
               <%= cl_image_tag(job.photo.key, style: 'width:210px;height:150px;', class: 'rounded-4') %>
             </div>
@@ -36,7 +36,7 @@
             <div class="m-2">
               <%= User.find(job.user_id).first_name %>
             </div>
-            <div class="card-profession-info border rounded-4 px-4 m-3" style="height: 140px">
+            <div class="card-profession-info border rounded-4 px-4 m-3" style="height: 200px">
               <p class="text-center my-auto"><%= job.description %></p>
             </div>
             <div class="d-grid m-2">
