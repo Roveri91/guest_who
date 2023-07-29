@@ -8,32 +8,32 @@
   </div>
 <% else %>
   <div class="container">
-  <div class="row">
+  <div class="d-flex flex-wrap justify-content-center">
     <% @jobs.each do |job| %>
-         <div class="card-profession col-3 p-4">
-            <div class="img mx-auto">
-                <%= cl_image_tag(job.photo.key, style: 'width:210px;height:150px;', class: 'rounded-4') %>
-            </div>
-            <div class="m-2">
-              <h2><%= job.name %></h2>
-              <p><%= job.price.to_i %> JPY</p>
-            </div>
+      <div class="card-profession col-3 p-4">
+        <div class="img mx-auto">
+          <%= cl_image_tag(job.photo.key, style: 'width:210px;height:150px;', class: 'rounded-4') %>
+        </div>
+        <div class="m-2">
+          <h2><%= job.name %></h2>
+          <p><%= job.price.to_i %> JPY</p>
+        </div>
 
-            <div class="m-2">
-              <h5><%= job.location %></h5>
-            </div>
-            <div class="card-profession-info border rounded-4 px-4 m-3" style="height: 170px">
-              <p class="text-center my-auto"><%= job.description %></p>
-            </div>
-            <div class="d-grid m-2">
-              <%= link_to "Delete this service", provider_job_path(job), class: "btn btn-hire", id: "delete-btn",
+        <div class="m-2">
+          <h5><%= job.location %></h5>
+        </div>
+        <div class="card-profession-info border rounded-4 px-4 m-3" style="height: 200px">
+          <p class="text-center my-auto"><%= job.description %></p>
+        </div>
+        <div class="d-grid m-2">
+          <%= link_to "Delete this service", provider_job_path(job), class: "btn btn-hire", id: "delete-btn",
                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            </div>
-          </div>
+        </div>
+      </div>
     <% end %>
-    <div class="text-center" style="margin: 40px">
-    <%= link_to "Add a new Job", new_provider_job_path, class: "btn-hire text-center" %>
   </div>
+  <div class="text-center" style="margin: 40px">
+    <%= link_to "Add a new Job", new_provider_job_path, class: "btn-hire text-center" %>
   </div>
 </div>
 <% end %>
