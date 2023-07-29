@@ -8,7 +8,7 @@
      <div class="card-profession col-3 p-4">
             <div class="img mx-auto">
               <%# <% if job.image.attached  %>
-                <%= image_tag booking.job.image, style: 'width:210px;height:150px;', class: 'rounded-4' %>
+                <%= cl_image_tag(booking.job.photo.key, style: 'width:210px;height:150px;', class: 'rounded-4') %>
               <%# else %>
                 <%#=image_tag "marriage-silhouette.jpg" %>
               <%# end %>
@@ -37,5 +37,5 @@
 </div>
 
 <div class="nav justify-content-center m-5">
-  <button class="btn-hire"><%= link_to "Back to Professions", jobs_path %></button>
+  <%= link_to "Back to Professions", jobs_path, class: "btn-hire" %>
 </div>
