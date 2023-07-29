@@ -1,5 +1,5 @@
 <div class="header">
-  <a href="/" class="title">Guest Who</a>
+  <a href="/" class="title tab">Guest Who</a>
   <div class="header-right">
     <!-- <% if user_signed_in? %>
       <span><%= link_to "Your Bookings", bookings_path %></span>
@@ -7,12 +7,12 @@
       <span><%= link_to "Sign in", new_user_session_path %></span>
     <% end %> -->
 
-    <span><%= link_to "Professions", jobs_path, class: "mx-2" %></span>
+    <span><%= link_to "Professions", jobs_path, class: "tab mx-2" %></span>
 
     <% if user_signed_in? %>
-      <span><%= link_to "Your Bookings", bookings_path, class: "mx-2" %></span>
-      <span><%= link_to "Your Jobs", provider_jobs_path, class: "mx-2" %></span>
-      <span><%= link_to "Your Order", provider_bookings_path, class: "mx-2" %></span>
+      <span><%= link_to "Your Bookings", bookings_path, class: "tab mx-2" %></span>
+      <span><%= link_to "Your Jobs", provider_jobs_path, class: "tab mx-2" %></span>
+      <span><%= link_to "Your Order", provider_bookings_path, class: "tab mx-2" %></span>
       <span><%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-hire mx-2", id: "delete-btn"%></span>
     <% else %>
       <span><%= link_to "Sign In", new_user_session_path, class: "btn btn-hire mx-2", id: "sign-in-btn"%></span>
