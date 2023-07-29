@@ -10,7 +10,7 @@
       <%= f.input :photo, as: :file, input_html: { multiple: false } %>
       <div class="d-flex justify-content-evenly my-5">
         <%= f.button :submit, class:"btn-hire" %>
-        <button class="btn-hire"><%= link_to "Back", provider_jobs_path%></button>
+        <%= link_to "Back", provider_jobs_path, class: "btn-hire"%>
       </div>
     <% end %>
   </div>
