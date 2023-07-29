@@ -1,5 +1,5 @@
 <div class="container px-5">
-  <h1 class="text-center">Your Orders</h1>
+  <h1 class="text-center" style="font-family: Allan; font-style: italic">Requests</h1>
   <div class="bookings">
     <% @bookings.each do |booking| %>
     <div class="booking">
@@ -10,7 +10,12 @@
           <div class="booking-info-title">
             <%= booking.job.name %>
           </div>
-            <%= booking.date.strftime('%B %d, %Y')%>
+            <%# <%= booking.job.location%>
+            <%# <div class="booking-info"> %>
+            <p> Booked by: <%= booking.user.first_name%> </p>
+            <%# </div> %>
+            <p> <%= booking.date.strftime('%B %d, %Y')%> </p>
+            <p> Total: ¥ <%= booking.job.price.to_i %> </p>
         </div>
       </div>
       <div class="booking-actions">
