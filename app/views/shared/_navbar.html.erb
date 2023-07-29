@@ -12,10 +12,10 @@
     <% if user_signed_in? %>
       <span><%= link_to "Your Bookings", bookings_path, class: "tab mx-2" %></span>
       <span><%= link_to "Your Jobs", provider_jobs_path, class: "tab mx-2" %></span>
-      <span><%= link_to "Your Order", provider_bookings_path, class: "tab mx-2" %></span>
-      <span><%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-hire mx-2", id: "delete-btn"%></span>
+      <span><%= link_to "Requests", provider_bookings_path, class: "tab mx-2" %></span>
+      <span><%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-hire mx-2 mt-2", id: "delete-btn"%></span>
     <% else %>
-      <span><%= link_to "Sign In", new_user_session_path, class: "btn btn-hire mx-2", id: "sign-in-btn"%></span>
+      <span><%= link_to "Sign In", new_user_session_path, class: "btn btn-hire mx-2 mt-2", id: "sign-in-btn"%></span>
     <% end %>
 
   </div>
