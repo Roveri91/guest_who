@@ -1,5 +1,5 @@
 
-㊗️ Tokyo Glow
+🎎 Guest Who 
 ---
 
 An app to find guests/services for your wedding
