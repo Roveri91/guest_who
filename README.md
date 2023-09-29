@@ -7,7 +7,7 @@ An app to find guests/services for your wedding
 **OVERVIEW**
 
 Our team has developed an app that allows you to rent people or services for your wedding. 
-With our app, you can not only rent services but also offer your own services to others."
+With our app, you can not only rent services but also offer your own services to others.
 
 📱SCREENSHOT
 ---
